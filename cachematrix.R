@@ -1,5 +1,5 @@
 ## Matrix inversion is usually a costly computation and there may be some
-## benefit to caching the inveerse of a matrix rather than compute it
+## benefit to caching the inverse of a matrix rather than compute it
 ## repeatedly. These functions cache the inverse of a matrix.
 
 ## This function creates a special "matrix" object that can cache its inverse
