@@ -38,3 +38,30 @@ cacheSolve <- function(x, ...) {
   }
   i
 }
+
+## This is the consolidation of the makeCacheMatrix and cacheSolve functions,
+## to more closely resemble a "matrixCache" object.
+
+matrixCache <- function(m) {
+  i <- NULL
+  setMatrix <- function(value) {
+    m <<- value
+    i <<- NULL
+  }
+  getMatrix <- function() {
+    m
+  }
+  setInverse <- function(value) {
+    i <<- value
+  }
+  getInverse <- function(...) {
+    if (is.null(i)) {
+      i <<- solve(m, ...)
+    }
+    i
+  }
+  list(setMatrix = setMatrix,
+       getMatrix = getMatrix,
+       setInverse = setInverse,
+       getInverse = getInverse)
+}
