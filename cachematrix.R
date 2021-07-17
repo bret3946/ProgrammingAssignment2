@@ -44,24 +44,22 @@ cacheSolve <- function(x, ...) {
 
 matrixCache <- function(m) {
   i <- NULL
-  setMatrix <- function(value) {
-    m <<- value
-    i <<- NULL
-  }
-  getMatrix <- function() {
-    m
-  }
-  setInverse <- function(value) {
-    i <<- value
-  }
-  getInverse <- function(...) {
-    if (is.null(i)) {
-      i <<- solve(m, ...)
+  list(
+    setMatrix = setMatrix <- function(value) {
+      m <<- value
+      i <<- NULL
+    },
+    getMatrix = getMatrix <- function() {
+      m
+    },
+    setInverse = setInverse <- function(value) {
+      i <<- value
+    },
+    getInverse = getInverse <- function(...) {
+      if (is.null(i)) {
+        i <<- solve(m, ...)
+      }
+      i
     }
-    i
-  }
-  list(setMatrix = setMatrix,
-       getMatrix = getMatrix,
-       setInverse = setInverse,
-       getInverse = getInverse)
+  )
 }
