@@ -52,9 +52,6 @@ matrixCache <- function(m) {
     getMatrix = getMatrix <- function() {
       m
     },
-    setInverse = setInverse <- function(value) {
-      i <<- value
-    },
     getInverse = getInverse <- function(...) {
       if (is.null(i)) {
         i <<- solve(m, ...)
