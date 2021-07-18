@@ -39,8 +39,8 @@ cacheSolve <- function(x, ...) {
   i
 }
 
-## This is the consolidation of the makeCacheMatrix and cacheSolve functions,
-## to more closely resemble a "matrixCache" object.
+## This is the copy and join of the makeCacheMatrix and cacheSolve functions,
+## to implement a new "matrixCache" object.
 
 matrixCache <- function(m) {
   i <- NULL
