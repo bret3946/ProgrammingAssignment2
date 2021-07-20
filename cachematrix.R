@@ -4,15 +4,15 @@
 
 ## This function creates a special "matrix" object that can cache its inverse
 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(m = matrix()) {
   i <- NULL
   setMatrix <- function(value) {
-    x <<- value
+    m <<- value
     # clear the inverse
     setInverse(NULL)
   }
   getMatrix <- function() {
-    x
+    m
   }
   setInverse <- function(value) {
     i <<- value
